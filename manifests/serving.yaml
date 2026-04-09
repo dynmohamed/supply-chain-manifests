@@ -19,7 +19,7 @@ spec:
           image: "docker.io/mohameddyn0/supply-chain-agent:v1"
           ports:
             - containerPort: 8080
-              protocol: TCP
+              protocol: "TCP"
           envFrom:
             - secretRef:
                 name: genai-secret
