@@ -3,11 +3,11 @@ kind: ServingTemplate
 metadata:
   name: supply-chain-risk-agent
   annotations:
-    scenarios.ai.sap.com/id: "supply-chain-risk" # ID dyal l'scénario f AI Launchpad
-    executables.ai.sap.com/id: "risk-predictor-exec" # ID dyal l'exécutable
+    scenarios.ai.sap.com/id: "supply-chain-risk"
+    executables.ai.sap.com/id: "risk-predictor-exec"
 spec:
   template:
-    spec:
+    spec: |
       containers:
         - name: predictor-container
           image: "docker.io/mohameddyn0/supply-chain-agent:v1"
