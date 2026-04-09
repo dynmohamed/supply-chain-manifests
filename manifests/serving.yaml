@@ -7,6 +7,7 @@ metadata:
     executables.ai.sap.com/id: "risk-predictor-exec"
     executables.ai.sap.com/name: "supply-chain-risk-predictor"
   labels:
+    scenarios.ai.sap.com/id: "supply-chain-risk"
     ai.sap.com/version: "v1"
 spec:
   template:
