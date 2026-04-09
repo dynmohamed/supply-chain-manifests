@@ -1,0 +1,18 @@
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingTemplate
+metadata:
+  name: supply-chain-risk-agent
+  annotations:
+    scenarios.ai.sap.com/id: "supply-chain-risk" # ID dyal l'scénario f AI Launchpad
+    executables.ai.sap.com/id: "risk-predictor-exec" # ID dyal l'exécutable
+spec:
+  template:
+    spec:
+      containers:
+        - name: predictor-container
+          image: "docker.io/mohameddyn0/supply-chain-agent:v1"
+          ports:
+            - containerPort: 8080
+          env:
+            - name: AICORE_TRACKING_ID
+              value: "v1"
