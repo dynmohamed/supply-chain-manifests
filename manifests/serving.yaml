@@ -5,7 +5,7 @@ metadata:
   annotations:
     scenarios.ai.sap.com/id: "supply-chain-risk"
     executables.ai.sap.com/id: "risk-predictor-exec"
-    executables.ai.sap.com/name: "Supply Chain Risk Predictor"
+    executables.ai.sap.com/name: "supply-chain-risk-predictor"
   labels:
     ai.sap.com/version: "v1"
 spec:
