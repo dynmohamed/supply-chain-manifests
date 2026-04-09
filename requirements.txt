@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+pandas
+catboost
+requests
+python-dotenv
+generative-ai-hub-sdk

@@ -1,0 +1,14 @@
+POST http://localhost:4004/odata/v4/supply-chain/PurchaseRequisitions
+Content-Type: application/json
+
+{
+    "ID": "PR-CAP-9999",
+    "vendor_ID": "VND-001",
+    "material_ID": "MAT-100",
+    "Quantity": 3000,
+    "LineItemValue": 12500.50,
+    "FreightCost_USD": 8200.00,
+    "DeliveryQuarter": 3,
+    "ShipmentMode": "Truck",
+    "ProcessingTime": 14
+}
