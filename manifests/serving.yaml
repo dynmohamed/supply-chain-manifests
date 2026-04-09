@@ -5,12 +5,15 @@ metadata:
   annotations:
     scenarios.ai.sap.com/id: "supply-chain-risk"
     executables.ai.sap.com/id: "risk-predictor-exec"
-    executables.ai.sap.com/name: "Supply Chain Risk Predictor" # Mandatory field
+    executables.ai.sap.com/name: "Supply Chain Risk Predictor"
   labels:
-    ai.sap.com/version: "v1" # Mandatory field
+    ai.sap.com/version: "v1"
 spec:
   template:
-    apiVersion: "serving.kserve.io/v1beta1" # Mandatory field
+    apiVersion: "serving.kserve.io/v1beta1"
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "1" 
     spec: |
       containers:
         - name: predictor-container
