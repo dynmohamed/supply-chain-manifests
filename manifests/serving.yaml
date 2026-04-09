@@ -13,11 +13,15 @@ spec:
   template:
     apiVersion: "serving.kserve.io/v1beta1"
     spec: |
-      containers:
-        - name: predictor-container
+      predictor:
+        containers:
+        - name: kserve-container
           image: "docker.io/mohameddyn0/supply-chain-agent:v1"
           ports:
             - containerPort: 8080
+          envFrom:
+            - secretRef:
+                name: genai-secret
           env:
             - name: AICORE_TRACKING_ID
               value: "v1"
