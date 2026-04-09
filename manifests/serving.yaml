@@ -12,8 +12,7 @@ spec:
   template:
     apiVersion: "serving.kserve.io/v1beta1"
     metadata:
-      annotations:
-        autoscaling.knative.dev/minScale: "1" 
+      annotations: '{"autoscaling.knative.dev/minScale": "1"}'
     spec: |
       containers:
         - name: predictor-container
