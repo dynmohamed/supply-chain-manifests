@@ -4,21 +4,27 @@ metadata:
   name: supply-chain-risk-agent
   annotations:
     scenarios.ai.sap.com/id: "supply-chain-risk"
+    scenarios.ai.sap.com/name: "supply-chain-risk"
     executables.ai.sap.com/id: "risk-predictor-exec"
-    executables.ai.sap.com/name: "Supply Chain Risk Predictor"
+    executables.ai.sap.com/name: "supply-chain-risk-predictor"
   labels:
     ai.sap.com/version: "v1"
 spec:
   template:
     apiVersion: "serving.kserve.io/v1beta1"
+    kind: "InferenceService"
     metadata:
       annotations: '{"autoscaling.knative.dev/minScale": "1"}'
-    spec: |
-      containers:
-        - name: predictor-container
-          image: "docker.io/mohameddyn0/supply-chain-agent:v1"
-          ports:
-            - containerPort: 8080
-          env:
-            - name: AICORE_TRACKING_ID
-              value: "v1"
+    spec:
+      predictor:
+        minReplicas: 1
+        custom:
+          container:
+            name: "kserve-container"
+            image: "docker.io/mohameddyn0/supply-chain-agent:v1"
+            ports:
+              - containerPort: 8080
+                protocol: TCP
+            env:
+              - name: AICORE_TRACKING_ID
+                value: "v1"
