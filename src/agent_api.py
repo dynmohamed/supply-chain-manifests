@@ -21,7 +21,7 @@ class ShipmentData(BaseModel):
     DeliveryQuarter: int
     Vendor: str
 
-@app.post("/orchestrate-shipment")
+@app.post("/v1/models/supply-chain-risk-agent:predict")
 def orchestrate_shipment(data: ShipmentData, background_tasks: BackgroundTasks):
     """
     Receives data from SAP CAP, predicts risk, and triggers an email alert if high risk.

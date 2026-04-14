@@ -16,7 +16,7 @@ spec:
       predictor:
         containers:
         - name: kserve-container
-          image: "docker.io/mohameddyn0/supply-chain-agent:v1"
+          image: "docker.io/mohameddyn0/supply-chain-agent:v2"
           ports:
             - containerPort: 8080
               protocol: "TCP"
